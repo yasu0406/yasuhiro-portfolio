@@ -9,7 +9,7 @@ import WorkDetailComponent from '../work-detail/work-detail.component';
 
 import fuji from '../../images/fuji.svg';
 
-const AnimatedWorks = (props) => {
+const AnimatedCommonLoading = (props) => {
     const circleRed = useRef(null);
     const title = useRef(null);
     const fujiImage = useRef(null); 
@@ -43,4 +43,4 @@ const AnimatedWorks = (props) => {
     )
 };
 
-export default AnimatedWorks;
+export default AnimatedCommonLoading;
