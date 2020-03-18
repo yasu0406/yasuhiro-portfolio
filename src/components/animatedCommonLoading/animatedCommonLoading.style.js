@@ -3,8 +3,8 @@ import { colors } from '../../styles/variable';
 
 export const MtAnimation = styled.div`
     width: 100%;
-    max-width:600px;
-    max-height:600px;
+    max-width:60rem;
+    max-height:60rem;
     border-radius:100%;
     position:fixed;
     top:0;
