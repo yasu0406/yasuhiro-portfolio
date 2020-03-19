@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.scss';
-import {TweenMax, Power3} from 'gsap';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
+import ScrollToTop from './ScrollTop';
+import AnimatedMouse from './components/animatedMouse/animatedMouse.component';
+import Header from './components/header/header.component';
+import Home from './pages/home/home.page';
+import Profile from './pages/profile/profile.page';
+import Works from './pages/works/works.page';
+import WorkDetal from './pages/work-detail/work-detail.page';
+
+import './styles/base.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Router>
+      <ScrollToTop>
+      <AnimatedMouse />
+      <Header />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/profile' component={Profile} />
+        <Route exact path='/works' render={routeProps => <Works {...routeProps} />} />
+        <Route exact path='/works/:title' render={routeProps => <WorkDetal {...routeProps} />} />
+      </Switch>
+      </ScrollToTop>
+    </Router>
+    
   );
 }
 
