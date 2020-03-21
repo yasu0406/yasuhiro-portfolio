@@ -16,7 +16,6 @@ import './styles/base.scss';
 
 function App() {
   return (
-    
     <Router>
       <ScrollToTop>
       <AnimatedMouse />
@@ -24,8 +23,8 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/profile' component={Profile} />
-        <Route exact path='/works' render={routeProps => <Works {...routeProps} />} />
-        <Route exact path='/works/:title' render={routeProps => <WorkDetal {...routeProps} />} />
+        <Route exact path='/works' component={Works} />
+        <Route exact path='/works/:title' component={WorkDetal} />
       </Switch>
       </ScrollToTop>
     </Router>
