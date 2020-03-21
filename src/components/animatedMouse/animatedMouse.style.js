@@ -40,6 +40,6 @@ export const Follower = styled.div`
         transform: scale(0);
     }
     &.is-active {
-        transform: scale(3);
+        transform: scale(2);
       }
 `;
