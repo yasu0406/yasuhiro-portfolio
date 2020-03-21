@@ -37,8 +37,8 @@ const AnimatedCommonLoading = (props) => {
           <h1 ref={title}>{props.title}</h1>
         </MtAnimation>
         <Route exact path='/profile' component={() => <ProfileComponent circleRed={circleRed} />} />
-        <Route exact path='/works' component={() => <PreviewWorks fuji={<FuhiImg ref={fujiImage} src={fuji} />} circleRed={circleRed} />} />
-        <Route exact path='/works/:title' component={() => <WorkDetailComponent circleRed={circleRed} />} />
+        <Route exact path='/works' component={routeProps => <PreviewWorks {...routeProps} fuji={<FuhiImg ref={fujiImage} src={fuji} />} circleRed={circleRed} />} />
+        <Route exact path='/works/:title' component={routeProps => <WorkDetailComponent {...routeProps} circleRed={circleRed} />} />
         </>
     )
 };
