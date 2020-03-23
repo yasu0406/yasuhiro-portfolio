@@ -25,6 +25,7 @@ export const FirstContainer = styled.div`
         width: max-content;
         h1 {
             overflow: hidden;
+            text-align: center;
         }
         p {
             font-size: 2.0rem;
@@ -54,13 +55,18 @@ export const ProfileImg = styled.div`
 `;
 
 export const SecondContainer = styled.div`
-    margin-top: 20rem;
-    padding: 80rem 0 0;
+    padding: 110rem 0 0;
+    @media screen and (max-width:768px) {
+        margin-top: 60rem;
+    }
     section {
         position: relative;
         background-color: #243563;
         z-index:100;
         padding: 16rem 4rem;
+        @media screen and (max-width:468px) {
+            padding: 16rem 4rem 80rem;
+        }
     }
 `;
 
