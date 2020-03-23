@@ -15,6 +15,7 @@ export const MtAnimation = styled.div`
     background-color: ${colors.mainRedColor};
     z-index:100;
     overflow:hidden;
+    transform: scale(0);
     h1 {
         height:10px;
         font-size:1rem;
