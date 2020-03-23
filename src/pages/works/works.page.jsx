@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Loading from '../../components/loading/loading.component';
-import AnimatedWorks from '../../components/animatedWork/animatedWorks.component';
+import AnimatedCommonLoading from '../../components/animatedCommonLoading/animatedCommonLoading.component';
 
 const Works = () => {
     return (
         <>
             <Loading />
-            <AnimatedWorks />
+            <AnimatedCommonLoading title='Works' />
         </>
     )
 };
