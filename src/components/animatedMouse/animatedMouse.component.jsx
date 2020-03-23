@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { TweenMax } from 'gsap';
+import { TweenLite } from 'gsap';
 import { Cursor, Follower } from './animatedMouse.style';
 
 var mouseX = 0,
@@ -18,36 +18,38 @@ const AnimatedMouse = () => {
     useEffect(() => {
         window.addEventListener('mousemove', onMouseMove);
         mouseAction();
-        return () => {
-            window.removeEventListener('mousemove', onMouseMove);
-            setMouseToggle(false);
-          };
     },[]);
     const onMouseMove = e => {
         mouseX = e.pageX;
         mouseY = e.pageY;
-        TweenMax.to({}, 1, {
+        TweenLite.to({}, 1, {
             repeat: -1,
             onRepeat: function() {
                 posX += (mouseX - posX) / animatedComp.delay;
                 posY += (mouseY - posY) / animatedComp.delay;
-                TweenMax.set(follower.current, {
-                    css: {    
-                        left: posX - (animatedComp.fWidth / 2),
-                        top: posY - (animatedComp.fWidth / 2)
-                    }
-                });
-                TweenMax.set(cursor.current, {
-                    css: {    
-                        left: mouseX - (animatedComp.cWidth / 2),
-                        top: mouseY - (animatedComp.cWidth / 2)
-                    }
-                });
             }
           });
+          TweenLite.to(follower.current, {
+            css: {    
+                left: posX - (animatedComp.fWidth / 2),
+                top: posY - (animatedComp.fWidth / 2)
+            }
+        });
+        TweenLite.to(cursor.current, {
+            css: {    
+                left: mouseX - (animatedComp.cWidth / 2),
+                top: mouseY - (animatedComp.cWidth / 2)
+            }
+        });
       };
-      const mouseAction = () => {
+    const mouseAction = () => {
         var hoverLink = document.querySelectorAll('a');
+        document.querySelector('.hamburger').addEventListener('mouseenter', () => {
+            setMouseToggle(true);
+          });
+          document.querySelector('.hamburger').addEventListener('mouseleave', () => {
+            setMouseToggle(false);
+          });
         Array.from(hoverLink).forEach(link => {
           link.addEventListener('mouseenter', () => {
             setMouseToggle(true);
@@ -55,8 +57,11 @@ const AnimatedMouse = () => {
           link.addEventListener('mouseleave', () => {
             setMouseToggle(false);
           });
+          link.addEventListener('click', () => {
+            setMouseToggle(false);
+          });
       });
-      }
+    }
     return (
         <>
             <Cursor className={`${mouseToggle? 'is-active' : '' } cursor`} ref={cursor} />
@@ -64,5 +69,4 @@ const AnimatedMouse = () => {
         </>
     )
 }
-
 export default AnimatedMouse;

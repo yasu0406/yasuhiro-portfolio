@@ -36,7 +36,6 @@ export const Follower = styled.div`
     span {
         display: inline-block;
         font-size: 14px;
-        font-weight: bold;
         transform: scale(0);
     }
     &.is-active {
