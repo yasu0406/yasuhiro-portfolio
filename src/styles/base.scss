@@ -1,90 +1,32 @@
 @import 'reset-css';
-@import 'mixin';
 
-$main-text-color: #E33642;
+$mainRedColor: #E33642;
 $main-background-color: #E5E5E5;
+$colorWh: #FFFFFF;
+
 
 html {
-    font-size: 0.71428571vw;
-    @media screen and (min-width: 1401px) {
-        html {
-            font-size: 68.5%;
-        }
-    }
-    @media screen and (max-width:768px) {
-        font-size: calc(100vw / 32);
+    font-size: calc(100vw / 144);
+    @media screen and (max-width:1024px) {
+        font-size: calc(100vw / 76.8);
     }
 }
-body {
-    font-family: "DIN Condensed Web";
-    background-color: $main-background-color;
+body { 
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
     * {
-        color: $main-text-color;
+        cursor: none;
+        color: $mainRedColor;
         text-transform: uppercase;
         letter-spacing: 0.12em;
     }
 }
-h1 {
-
-}
 a {
     text-decoration: none;
     font-size: 2.4rem;
-}
-header {
-    padding: 4rem 4rem 2.5rem 4rem;
-    display: flex;
-    .logo {
-        a {        
-            font-size: 3.2rem;
-            @media screen and (max-width:768px) {
-                & {
-                    font-size: 1.7rem;
-                }
-            }
-        }
+    @media screen and (max-width:768px) {
+        font-size: 1.2rem;
     }
 }
-.home {
-    ul {
-        text-align: center;
-        li {
-            &:first-child,
-            &:last-child {
-                font-size: 4rem;
-            }
-            &:nth-child(2) {
-                font-size: 12.4rem;
-            }
-            &:nth-child(3) {
-                font-size: 6.4rem;
-            }
-            &:nth-child(4) {
-                font-size: 5.2rem;
-                span {
-                    display: block;
-                    font-size: 16.4rem;
-                }
-            }
-            @media screen and (max-width:768px) {
-                &:first-child,
-                &:last-child {
-                    font-size: 2rem;
-                }
-                &:nth-child(2) {
-                    font-size: 6.2rem;
-                }
-                &:nth-child(3) {
-                    font-size: 3.2rem;
-                }
-                &:nth-child(4) {
-                    font-size: 2.6rem;
-                    span {
-                        display: block;
-                        font-size: 8.2rem;
-                    }
-                }
-            }
-        }
-    }
+img {
+    width:100%;
 }
