@@ -102,6 +102,7 @@ export const ViewMore = styled.p`
 
 export const TypeOfWork = styled.p`
     width: 12rem;
+    margin-top: 1.5rem;
     padding: 1rem 0;
     text-align: center;
     background-color: ${colors.mainRedColor};
