@@ -57,10 +57,18 @@ const HeaderComponent = () => {
                 delay: 1.3,
                 transform: 'translateY(0)'
             });
-            // TweenLite.to(navList[2], 0.5, {
-            //     delay: 1.6,
-            //     transform: 'translateY(0)'
-            // });
+            TweenLite.to(navList[2], 0.5, {
+                delay: 1.6,
+                transform: 'translateY(0)'
+            });
+            TweenLite.to(navList[3], 0.5, {
+                delay: 1.6,
+                transform: 'translateY(0)'
+            });
+            TweenLite.to(navList[4], 0.5, {
+                delay: 1.6,
+                transform: 'translateY(0)'
+            });
         } else {
             onCloseMenu();
         }        
@@ -74,10 +82,18 @@ const HeaderComponent = () => {
             delay: 0.3,
             transform: 'translateY(100%)'
         });
-        // TweenLite.to(navList[2], 0.5, {
-        //     delay: 0.6,
-        //     transform: 'translateY(100%)'
-        // });
+        TweenLite.to(navList[2], 0.5, {
+            delay: 0.6,
+            transform: 'translateY(100%)'
+        });
+        TweenLite.to(navList[3], 0.5, {
+            delay: 0.6,
+            transform: 'translateY(100%)'
+        });
+        TweenLite.to(navList[4], 0.5, {
+            delay: 0.6,
+            transform: 'translateY(100%)'
+        });
         TweenLite.to(menu.current, 0.5, {
             delay: 1,
             width: 0,
@@ -117,14 +133,16 @@ const HeaderComponent = () => {
                         <li><NavLink onClick={e => changePage(e, `/works`)} ref={(e) => { e !== null && navList.push(e) }}><span data-text="works">works</span></NavLink></li>
                         <li><NavLink onClick={e => changePage(e, `/profile`)} ref={(e) => { e !== null && navList.push(e) }}><span data-text="profile">profile</span></NavLink></li>
                         {/* <li><NavLink onClick={e => changePage(e, `/profile`)} ref={(e) => { e !== null && navList.push(e) }}><span data-text="contact">contact</span></NavLink></li> */}
+                        <li>
+                            <SnsLink>
+                                <li><a ref={(e) => { e !== null && navList.push(e) }} href='https://www.linkedin.com/in/yasuhiro-katayama-118423160/' target='_blank'>linkedin</a></li>
+                                <li><a ref={(e) => { e !== null && navList.push(e) }} href='https://github.com/yasu0406' target='_blank'>github</a></li>
+                                <li><a ref={(e) => { e !== null && navList.push(e) }} href='https://yasuhiro-k.com/images/resume.pdf' target='_blank'>resume</a></li>
+                            </SnsLink>
+                        </li>
                     </menu>
                 </HeaderMenu>
             </div>
-            <SnsLink>
-                <li><a href='https://www.linkedin.com/in/yasuhiro-katayama-118423160/' target='_blank'>linkedin</a></li>
-                <li><a href='https://github.com/yasu0406' target='_blank'>github</a></li>
-                <li><a href='https://yasuhiro-k.com/images/resume.pdf' target='_blank'>resume</a></li>
-            </SnsLink>
         </Header>
     )
 }

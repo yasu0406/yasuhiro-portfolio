@@ -109,15 +109,14 @@ export const NavLink = styled.a`
 `;
 
 export const SnsLink = styled.ul`
-    position: fixed;
-    right: 4rem;
-    bottom: 4rem;
     display: flex;
+    justify-content: center;
     li {
         margin-left: 2rem;
         font-size: 1rem;
+        overflow: unset!important;
         &:first-child {
-            margin-left: none;
+            margin-left: 0;
         }
     }
 `;
